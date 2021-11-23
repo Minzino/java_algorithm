@@ -1,4 +1,4 @@
-package baekjoon;
+package io_and_arithmetic;
 
 import java.io.BufferedReader;
 import java.io.IOException;

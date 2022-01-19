@@ -3,12 +3,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class ReverseInteger {
-    public static void main(String[] args) throws IOException {
+    public int reverse(int x) {
         //int형 변수가 입력되면 반전해서 출력
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
-        int number = Integer.parseInt(br.readLine());
+        int number = x;
         int temp = 0;
 
         if (number < 0) {
@@ -24,14 +23,14 @@ public class ReverseInteger {
                 sb.append(number);
             }
         }
-        if(temp < 0) {
-            System.out.println(Integer.parseInt(String.valueOf(sb))*(-1));
-        }else {
-            System.out.println(Integer.valueOf(String.valueOf(sb)));
+        if (temp < 0) {
+            return Integer.parseInt(String.valueOf(sb)) * (-1);
+        } else {
+            return Integer.parseInt(String.valueOf(sb));
         }
     }
-
 }
+
 //class Solution {
 //    public int reverse(int x) {
 //        StringBuilder sb = new StringBuilder();

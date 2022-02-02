@@ -17,30 +17,32 @@ public class bj2309 {
 
         for (int i = 0; i < 9; i++) {
             arrDwarf[i] = Integer.parseInt(br.readLine());
-            sum+=arrDwarf[i];
+            sum += arrDwarf[i];
         }
         Arrays.sort(arrDwarf);
 
 
+        boolean flag = false;
 
-        int temp1 = 0;
-        for(int i = 0 ; i <9; i++){
-            if(temp1 == 100) break;
-            temp1 = sum;
-            temp1-=arrDwarf[i];
-            int temp2 = temp1;
-            for(int j = i + 1;j < 9;j++){
-                temp1-=arrDwarf[j];
-                if(temp1==100){
+        for (int i = 0; i < 9; i++) {
+            if (flag) {
+                break;
+            }
+            sum -= arrDwarf[i];
+            for (int j = i + 1; j < 9; j++) {
+                sum -= arrDwarf[j];
+                if (sum == 100) {
                     fakeDwarf[0] = arrDwarf[i];
                     fakeDwarf[1] = arrDwarf[j];
+                    flag = true;
                     break;
                 }
-                temp1 = temp2;
+                sum += arrDwarf[j];
             }
+            sum += arrDwarf[i];
         }
-        for(int i = 0 ; i<9; i++){
-            if(arrDwarf[i] != fakeDwarf[0] && arrDwarf[i] != fakeDwarf[1] ) {
+        for (int i = 0; i < 9; i++) {
+            if (arrDwarf[i] != fakeDwarf[0] && arrDwarf[i] != fakeDwarf[1]) {
                 sb.append(arrDwarf[i]).append("\n");
             }
         }

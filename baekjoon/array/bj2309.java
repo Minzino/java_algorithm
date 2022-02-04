@@ -10,7 +10,6 @@ public class bj2309 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
-
         int sum = 0;
         int[] arrDwarf = new int[9];
         int[] fakeDwarf = new int[2];
